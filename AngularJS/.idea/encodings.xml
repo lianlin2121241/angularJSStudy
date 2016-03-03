@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/006-$scope里的$apply、$digest方法/index.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/007-$scope里的$watch方法/index.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/008-练习购物车/index.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/013-$provide里provider方法/index.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/014-$provider里的factory、service方法/index.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/015-多个控制器内数据共享/index.js" charset="UTF-8" />
+  </component>
+</project>
