@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div ng-controller="firstController">
+    <!-- [1,2,3,4,5] -->
+    <p>{{[1,2,3,4,5,6,7,8]|limitTo:5}}</p>
+    <!-- [4,5,6,7,8] -->
+    <p>{{[1,2,3,4,5,6,7,8]|limitTo:-5}}</p>
+
+    <!-- hello world -->
+    <p>{{data.message|lowercase}}</p>
+    <!-- HELLO WORLD -->
+    <p>{{data.message|uppercase}}</p>
+
+    <!-- [{"name":"上海","py":"shanghai"},{"name":"北京","py":"beijing"},{"name":"天津","py":"tianjin"}] -->
+    <p>{{data.city}}</p>
+    <!-- [{"name":"北京","py":"beijing"}] -->
+    <p>{{data.city|filter:"北京"}}</p>
+    <!-- [] -->
+    <p>{{data.city|filter:"name"}}</p>
+    <!-- [{"name":"上海","py":"shanghai"},{"name":"北京","py":"beijing"}] -->
+    <p>{{data.city|filter:{py:'g'} }}</p>
+    <!-- [{"name":"上海","py":"shanghai"}] -->
+    <p>{{data.city|filter:checkName}}</p>
+
+    <!-- [{"name":"北京","py":"beijing"},{"name":"上海","py":"shanghai"},{"name":"天津","py":"tianjin"}] -->
+    <p>{{data.city|orderBy:'py'}}</p>
+    <!-- [{"name":"天津","py":"tianjin"},{"name":"上海","py":"shanghai"},{"name":"北京","py":"beijing"}] -->
+    <p>{{data.city|orderBy:'-py'}}</p>
+</div>
+</body>
+<script src="../vendor/angular/angular.js" language="javascript" type="text/javascript"></script>
+<script src="index.js" language="javascript" type="text/javascript"></script>
+</html>

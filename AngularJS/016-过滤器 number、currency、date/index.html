@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div ng-controller="firstController">
+    <p>{{123456789|number}}</p>
+    <p>{{123456789|number:3}}</p>
+
+    <p>{{9999999|currency}}</p>
+    <p>{{9999999|currency:'￥'}}</p>
+
+    <p>defult:{{today}}</p>
+    <p>medium:{{today|date:"medium"}}</p>
+    <p>short:{{today|date:"short"}}</p>
+    <p>fullDate:{{today|date:"fullDate"}}</p>
+    <p>longDate:{{today|date:"longDate"}}</p>
+    <p>mediumDate:{{today|date:"mediumDate"}}</p>
+    <p>shortDate:{{today|date:"shortDate"}}</p>
+    <p>mediumTime:{{today|date:"mediumTime"}}</p>
+    <p>shortTime:{{today|date:"shortTime"}}</p>
+
+    <p>custom:{{today|date:"y-MM-dd HH:mm:ss"}}</p>
+</div>
+</body>
+<script src="../vendor/angular/angular.js" language="javascript" type="text/javascript"></script>
+<script src="index.js" language="javascript" type="text/javascript"></script>
+</html>
