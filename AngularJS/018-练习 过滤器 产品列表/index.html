@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.css"/>
+    <style>
+        .caretRed{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="container" ng-controller="productController">
+    <nav class="navbar navbar-default">
+        <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+                <input type="text" ng-model="search" class="form-control" placeholder="Search">
+            </div>
+        </form>
+    </nav>
+    <table class="table">
+        <thead>
+        <tr>
+            <th ng-click="orderFun('id')" ng-class="{dropup:order==='-'}">
+                产品编号
+                <span ng-class="{caretRed:orderType==='id'}" class="caret"></span>
+            </th>
+            <th ng-click="orderFun('name')" ng-class="{dropup:order==='-'}">
+                产品名称
+                <span ng-class="{caretRed:orderType==='name'}" class="caret"></span>
+            </th>
+            <th ng-click="orderFun('price')" ng-class="{dropup:order==='-'}">
+                产品价格
+                <span ng-class="{caretRed:orderType==='price'}" class="caret"></span>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="product in productData|filter:search|orderBy:order+orderType">
+            <td>{{product.id}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+<script src="../vendor/angular/angular.js" language="javascript" type="text/javascript"></script>
+<script src="index.js" language="javascript" type="text/javascript"></script>
+</html>
