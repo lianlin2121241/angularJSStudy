@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div ng-controller="firstController">
+        <!--渲染指令-->
+        <!--ng-bind指令-->
+        <p>{{1+1}}</p>
+        <p ng-bind="1+1"></p>
+        <p ng-bind-template='{{1+1}}'></p>
+
+        <!--city=['上海','天津','北京']-->
+        <ul ng-init="cityArr=['上海','天津','北京']">
+            <li ng-repeat="city in cityArr">
+                <span>{{$index}}</span> <span>{{$first}}</span> <span>{{$middle}}</span> <span>{{$last}}</span>
+                <span ng-bind="city"></span>
+            </li>
+        </ul>
+
+        <!--ng-include指令-->
+        <div ng-include="'other.html'"></div>
+        <div ng-include src="'other.html'"></div>
+
+
+        <br/>
+        <!--事件指令-点击时间指令-->
+        <button ng-click="changeState($event)">状态切换</button>
+        <p ng-bind="state"></p>
+    </div>
+</body>
+<script src="../vendor/angular/angular.js" language="javascript" type="text/javascript"></script>
+<script src="index.js" language="javascript" type="text/javascript"></script>
+</html>
