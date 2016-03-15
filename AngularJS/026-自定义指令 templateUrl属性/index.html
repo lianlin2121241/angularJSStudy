@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!--通过script标签添加模板-->
+    <script type="text/ng-template" id="tempCustom">
+        <div>hello {{name}}</div>
+    </script>
+</head>
+<body>
+    <div ng-controller="firstController">
+        <custom-dir></custom-dir>
+        <custom-dir1>1212</custom-dir1>
+    </div>
+</body>
+<script src="../vendor/angular/angular.js" language="javascript" type="text/javascript"></script>
+<script src="index.js" language="javascript" type="text/javascript"></script>
+</html>

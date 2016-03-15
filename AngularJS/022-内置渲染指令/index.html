@@ -3,6 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        .red{
+            color:red;
+        }
+        .even{
+            color:blue;
+        }
+        .odd{
+            color:green;
+        }
+    </style>
 </head>
 <body>
     <div ng-controller="firstController">
@@ -14,7 +25,7 @@
 
         <!--city=['上海','天津','北京']-->
         <ul ng-init="cityArr=['上海','天津','北京']">
-            <li ng-repeat="city in cityArr">
+            <li ng-class-even="'even'" ng-class-odd="'odd'" ng-repeat="city in cityArr">
                 <span>{{$index}}</span> <span>{{$first}}</span> <span>{{$middle}}</span> <span>{{$last}}</span>
                 <span ng-bind="city"></span>
             </li>
@@ -28,7 +39,23 @@
         <br/>
         <!--事件指令-点击时间指令-->
         <button ng-click="changeState($event)">状态切换</button>
-        <p ng-bind="state"></p>
+        <p ng-class="'red'" ng-bind="state"></p>
+
+        <!--节点指令-->
+        <div ng-style="{'color':'red'}">ng-style</div>
+        <div ng-style="defaultStyle">ng-style2</div>
+        <div ng-class="{red:state}">ng-class</div>
+        <div ng-show="state">ng-show</div>
+
+        <ul ng-switch on="state">
+            <li ng-switch-when="true">ng-switch-show</li>
+            <li ng-switch-when="false">ng-switch-hide</li>
+        </ul>
+
+        <img ng-src="{{src}}" alt=""/>
+        <a ng-href="https://sci1-1.am.microsoft.com/291465942759080852/160-235.jpg" alt="">160-235.jpg</a>
+
+        <div ng-if="state">ng-if</div>
     </div>
 </body>
 <script src="../vendor/angular/angular.js" language="javascript" type="text/javascript"></script>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div ng-controller="firstController">
+        <!--
+            1、div替换为dom节点
+            2、默认的优先级为0，哪个先定义哪个先使用
+        -->
+        <div ng-repeat="user in users" custom-dir1="b" custom-dir2>eeee</div>
+    </div>
+</body>
+<script src="../vendor/angular/angular.js" language="javascript" type="text/javascript"></script>
+<script src="index.js" language="javascript" type="text/javascript"></script>
+</html>
