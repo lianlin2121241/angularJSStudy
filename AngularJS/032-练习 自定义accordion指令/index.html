@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.css"/>
+</head>
+<body>
+    <div class="container" ng-controller="firstController">
+        <collapse-panel>
+            <collapse-item ng-repeat="item in data" heading="{{item.title}}">
+                {{item.content}}
+            </collapse-item>
+        </collapse-panel>
+    </div>
+</body>
+<script src="../vendor/angular/angular.js" language="javascript" type="text/javascript"></script>
+<script src="index.js" language="javascript" type="text/javascript"></script>
+</html>

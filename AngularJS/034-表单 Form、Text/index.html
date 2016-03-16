@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../vendor/bootstrap/css/bootstrap.css"/>
+</head>
+<body>
+    <div class="container" ng-controller="firstController" style="margin-top: 100px;">
+        <form name="myForm" class="form-horizontal">
+            <!--
+                myForm.username.$pristine:字段是否未变更
+                myForm.username.$dirty:字段是否变更
+                myForm.username.$valid:字段有效
+                myForm.username.$invalid:字段无效
+                myForm.username.$error:字段错误信息
+            -->
+            <div class="form-group" ng-class="{'has-error':myForm.username.$dirty&&myForm.username.$invalid}">
+                <label class="col-sm-2 control-label">用户名</label>
+                <div class="col-sm-10">
+                    <!--
+                        ng-pattern:正则验证
+                        ng-required:必填验证
+                        ng-maxlength:最大长度验证
+                        ng-minlength:最小长度验证
+                    -->
+                    <input type="text" name="username" ng-pattern="/^[a-zA-Z]{1}/" ng-required="true" ng-model="data.username" ng-maxlength="10" ng-minlength="5" class="form-control" placeholder="请输入用户名">
+                    <!--
+                        myForm.username.$error.maxlength:最大长度验证
+                        myForm.username.$error.minlength:最小长度验证
+                        myForm.username.$error.pattern:正则验证
+                        myForm.username.$error.email:邮箱验证
+                    -->
+                    <p ng-show="myForm.username.$error.maxlength" class="bg-danger">输入文字长度应小于10</p>
+                    <p ng-show="myForm.username.$error.minlength" class="bg-danger">输入文字长度应大于5</p>
+                    <p ng-show="myForm.username.$error.pattern" class="bg-danger">应该以字母开头</p>
+                    <!--
+                        myForm.username.$error:错误信息
+                    -->
+                    {{myForm.username.$error}}
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="../vendor/angular/angular.js" language="javascript" type="text/javascript"></script>
+<script src="index.js" language="javascript" type="text/javascript"></script>
+</html>
