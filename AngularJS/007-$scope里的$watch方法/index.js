@@ -22,10 +22,12 @@ angular.module('firstApp', [])
             count:0
         }
 
+        //$watch("监听对象",function,"如果监听对象为true")
         $scope.$watch("data.name",function(newValue,oldValue){
             ++$scope.data.count;
             if($scope.data.count>30){
                 $scope.data.name="已改变30次"
             }
+            console.log(newValue+"   "+oldValue)
         },true)
     })

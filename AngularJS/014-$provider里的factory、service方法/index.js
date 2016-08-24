@@ -9,10 +9,12 @@ var myApp=angular.module("myApp",[],function($provide){
             }
         }
     })
+    //自定义工厂
     $provide.factory("CustomFactory",function(){
         return [1,2,1,3,3,6,5,4,8];
 
     })
+    //自定义服务 必须为引用类型
     $provide.service("CustomService2",function(){
         return "fwefwe";//打印为空对象，返回必须为引用类型
 
