@@ -23,7 +23,7 @@ var myApp=angular.module("myApp",[],function($provide,$filterProvider,$controlle
     /**
      * 通过依赖注入注册过滤器
      * */
-    $filterProvider.register("filterAge",function(){
+    /*$filterProvider.register("filterAge",function(){
         return function(data){
             var newArr=[];
             angular.forEach(data,function(obj){
@@ -33,14 +33,14 @@ var myApp=angular.module("myApp",[],function($provide,$filterProvider,$controlle
             })
             return newArr;
         }
-    })
+    })*/
 
     /**
      * 通过依赖注入注册控制器
      * */
-    $controllerProvider.register("filterController", function ($scope,Data) {
+    /*$controllerProvider.register("filterController", function ($scope,Data) {
         $scope.data=Data;
-    })
+    })*/
 });
 
 /**
@@ -56,4 +56,8 @@ myApp.filter("filterCity",function(){
         })
         return newArr;
     }
+})
+
+myApp.controller("filterController",function($scope,Data){
+    $scope.data=Data;
 })
