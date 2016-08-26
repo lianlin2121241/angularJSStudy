@@ -28,7 +28,7 @@ myApp.directive("bookList",function(){
             //a:"&books"
             //=:作用域的属性与父元素作用域的属性双向绑定，任何一方修改均影响对方
             b:"=booksParent",
-            //@:只能读取父作用域里值单项绑定
+            //@:只能读取父作用域里值单项绑定，只能是简单数据类型，字符串
             c:"@booksTitle"
         },
         controllerAs:"bookListController",
