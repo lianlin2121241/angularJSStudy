@@ -13,6 +13,9 @@ myApp.directive("customDir1", function () {
         replace: true,
         compile:function(tElement,tAttrs,transclude){
             //主要用于编译阶段，添加dom节点
+            console.log(tElement);
+            console.log(tAttrs);
+            console.log(transclude);
             console.log("customDir1 compile 编译阶段……");
             tElement.append(angular.element("<div>{{user.name}} {{user.count}}</div>"));
             return {

@@ -200,7 +200,7 @@ myApp.directive("even",function(){
             })
 
             ngModelController.$formatters.push(function(modelValue){
-                console.log(modelValue);
+                //console.log(modelValue);
                 return !!modelValue?modelValue+"modelValue返回":"";
                 //return modelValue+"faf";
             })
